@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/accent_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarAudio"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/main_color"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:title="Audio Analysis"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingEnd="@dimen/screen_padding" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/screen_padding">
+
+        <!-- Audio input box -->
+        <LinearLayout
+            android:id="@+id/containerAudioInput"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@drawable/bg_card_white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- بلوك بسيط يوضح منطقة الصوت -->
+            <View
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/bg_secondary_rounded" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="8dp" />
+
+            <TextView
+                android:id="@+id/tvTapToRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap to record audio"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="24dp" />
+
+        <!-- Result section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvHappyAudio"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Happy"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_result_neutral" />
+
+            <Space android:layout_width="12dp" android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/tvSadAudio"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Sad"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_result_neutral" />
+
+            <Space android:layout_width="12dp" android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/tvFearAudio"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Fear"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_result_neutral" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

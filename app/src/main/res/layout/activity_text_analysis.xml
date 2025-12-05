@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/accent_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarText"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/main_color"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:title="Text Analysis"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingEnd="@dimen/screen_padding" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/screen_padding">
+
+        <!-- Text input section -->
+        <LinearLayout
+            android:id="@+id/containerInputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_white"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/etInputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your text here..." />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="12dp" />
+
+            <Button
+                android:id="@+id/btnAnalyzeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Analyze"
+                android:layout_gravity="end" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="24dp" />
+
+        <!-- Result section -->
+        <LinearLayout
+            android:id="@+id/containerResults"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvHappy"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Happy"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_result_neutral" />
+
+            <Space android:layout_width="12dp" android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/tvSad"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Sad"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_result_neutral" />
+
+            <Space android:layout_width="12dp" android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/tvFear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Fear"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_result_neutral" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
