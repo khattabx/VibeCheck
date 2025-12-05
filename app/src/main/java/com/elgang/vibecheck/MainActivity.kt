@@ -20,13 +20,16 @@ class MainActivity : AppCompatActivity() {
 
         val toolbar = findViewById<Toolbar>(R.id.toolbarMain)
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false) // العنوان بنحطه في TextView جوه الـ Toolbar
+        // we use our own title TextView
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
+        // LEFT: team logo → go directly to TeamMembersActivity
         val ivTeamIcon = findViewById<ImageView>(R.id.ivTeamIcon)
         ivTeamIcon.setOnClickListener {
             startActivity(Intent(this, TeamMembersActivity::class.java))
         }
 
+        // MAIN CARDS
         cardTextAnalysis = findViewById(R.id.cardTextAnalysis)
         cardAudioAnalysis = findViewById(R.id.cardAudioAnalysis)
 
@@ -40,12 +43,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        // RIGHT: about icon in menu → will navigate to SupervisionActivity
         menuInflater.inflate(R.menu.menu_main_top, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            // DIRECT NAVIGATION to supervision page
             R.id.action_supervision -> {
                 startActivity(Intent(this, SupervisionActivity::class.java))
                 true

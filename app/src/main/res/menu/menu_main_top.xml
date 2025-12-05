@@ -2,6 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/action_supervision"
-        android:title="Supervision"
+        android:title=""
+        android:icon="@drawable/about"
         android:showAsAction="always" />
 </menu>
