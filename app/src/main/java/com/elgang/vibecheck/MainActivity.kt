@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbarMain)
         setSupportActionBar(toolbar)
 
-        // Left click = Team Members (هنستخدم click على الـ title area)
         toolbar.setOnClickListener {
             startActivity(Intent(this, TeamMembersActivity::class.java))
         }

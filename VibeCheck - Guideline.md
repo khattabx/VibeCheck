@@ -41,11 +41,11 @@ Each prompt should be written separately under the name of its screen, and all p
 ## Time Line
 - [x]  Git, GitHub
 - [x] Assets/ .PNGs
-- [ ] Splash, Name, Icon
-- [ ] Top Bar
-- [ ] Main Screen
-- [ ] Text Analysis Screen
-- [ ] Audio Analysis Screen
+- [x] Splash, Name, Icon
+- [x] Top Bar
+- [x] Main Screen
+- [x] Text Analysis Screen
+- [x] Audio Analysis Screen
 
 --- 
 ## Screen Prompts 
