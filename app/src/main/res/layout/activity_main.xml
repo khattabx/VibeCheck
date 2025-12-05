@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/accent_color">
 
-    <!-- Top App Bar -->
+    <!-- Top App Bar مخصص -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarMain"
         android:layout_width="match_parent"
@@ -14,11 +14,44 @@
         android:background="@color/main_color"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:paddingStart="@dimen/screen_padding"
-        android:paddingEnd="@dimen/screen_padding"
-        app:title="VibeCheck"
-        app:titleTextColor="@color/white" />
+        android:paddingEnd="@dimen/screen_padding">
 
-    <!-- محتوى الشاشة -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- اللوجو على الشمال -->
+            <ImageView
+                android:id="@+id/ivTeamIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/team_icon"
+                android:contentDescription="Team members icon" />
+
+            <!-- مسافة صغيرة بين اللوجو والنص -->
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="0dp" />
+
+            <!-- اسم التطبيق في النص -->
+            <TextView
+                android:id="@+id/tvToolbarTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="VibeCheck"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- باقي شاشة الـ Main كما هو (بدون تغيير) -->
     <LinearLayout
         android:id="@+id/contentMain"
         android:layout_width="match_parent"
@@ -38,11 +71,11 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- بلوك بسيط بدل الأيقونة -->
-            <View
+            <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:background="@drawable/bg_secondary_rounded" />
+                android:src="@drawable/team_icon"
+                android:contentDescription="Text analysis icon" />
 
             <Space
                 android:layout_width="0dp"
@@ -71,11 +104,11 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- بلوك بسيط بدل الأيقونة -->
-            <View
+            <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:background="@drawable/bg_secondary_rounded" />
+                android:src="@drawable/mic_icon"
+                android:contentDescription="Audio analysis icon" />
 
             <Space
                 android:layout_width="0dp"
