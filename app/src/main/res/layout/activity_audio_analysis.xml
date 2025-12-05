@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarAudio"
         android:layout_width="match_parent"
@@ -15,13 +16,14 @@
         android:paddingStart="@dimen/screen_padding"
         android:paddingEnd="@dimen/screen_padding" />
 
+    <!-- محتوى الشاشة -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="@dimen/screen_padding">
 
-        <!-- Audio input box -->
+        <!-- Audio input box: اضغط واستمر للتسجيل -->
         <LinearLayout
             android:id="@+id/containerAudioInput"
             android:layout_width="match_parent"
@@ -45,53 +47,52 @@
                 android:id="@+id/tvTapToRecord"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tap to record audio"
+                android:text="Tap - hold to record"
                 android:textColor="@color/black" />
+
+            <!-- تايمر يوضح مدة التسجيل الحالية -->
+            <TextView
+                android:id="@+id/tvRecordTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="@color/secondary_color"
+                android:layout_marginTop="4dp"
+                android:visibility="gone" />
         </LinearLayout>
 
         <Space
             android:layout_width="0dp"
             android:layout_height="24dp" />
 
-        <!-- Result section -->
+        <!-- Result / playback box: يعرض مدة التسجيل + زرار Play/Pause -->
         <LinearLayout
+            android:id="@+id/containerRecordingInfo"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_card_white"
+            android:padding="16dp"
+            android:gravity="center_vertical">
 
+            <!-- نص يوضح حالة/مدة التسجيل -->
             <TextView
-                android:id="@+id/tvHappyAudio"
+                android:id="@+id/tvRecordingInfo"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="Happy"
-                android:textColor="@android:color/white"
-                android:background="@drawable/bg_result_neutral" />
+                android:text="No recording yet"
+                android:textColor="@color/black" />
 
-            <Space android:layout_width="12dp" android:layout_height="0dp" />
-
+            <!-- زرار Play / Pause للتسجيل الأخير -->
             <TextView
-                android:id="@+id/tvSadAudio"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Sad"
-                android:textColor="@android:color/white"
-                android:background="@drawable/bg_result_neutral" />
-
-            <Space android:layout_width="12dp" android:layout_height="0dp" />
-
-            <TextView
-                android:id="@+id/tvFearAudio"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Fear"
-                android:textColor="@android:color/white"
-                android:background="@drawable/bg_result_neutral" />
+                android:id="@+id/btnPlayPause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play"
+                android:textColor="@color/secondary_color"
+                android:textStyle="bold"
+                android:padding="8dp" />
         </LinearLayout>
 
     </LinearLayout>
