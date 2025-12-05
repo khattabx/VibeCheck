@@ -34,6 +34,7 @@
                 android:id="@+id/etInputText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/main_color"
                 android:hint="Enter your text here..." />
 
             <Space
@@ -52,46 +53,21 @@
             android:layout_width="0dp"
             android:layout_height="24dp" />
 
-        <!-- Result section -->
+        <!-- Result section: single box to show model output -->
         <LinearLayout
-            android:id="@+id/containerResults"
+            android:id="@+id/containerResultText"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_white"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
-                android:id="@+id/tvHappy"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Happy"
-                android:textColor="@android:color/white"
-                android:background="@drawable/bg_result_neutral" />
-
-            <Space android:layout_width="12dp" android:layout_height="0dp" />
-
-            <TextView
-                android:id="@+id/tvSad"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Sad"
-                android:textColor="@android:color/white"
-                android:background="@drawable/bg_result_neutral" />
-
-            <Space android:layout_width="12dp" android:layout_height="0dp" />
-
-            <TextView
-                android:id="@+id/tvFear"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Fear"
-                android:textColor="@android:color/white"
-                android:background="@drawable/bg_result_neutral" />
+                android:id="@+id/tvResultText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Result will appear here"
+                android:textColor="@color/black" />
         </LinearLayout>
 
     </LinearLayout>
