@@ -6,15 +6,12 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
 
 class TextAnalysisActivity : AppCompatActivity() {
 
     private lateinit var etInputText: EditText
     private lateinit var btnAnalyze: Button
-    private lateinit var tvHappy: TextView
-    private lateinit var tvSad: TextView
-    private lateinit var tvFear: TextView
+    private lateinit var tvResultText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,39 +24,34 @@ class TextAnalysisActivity : AppCompatActivity() {
 
         etInputText = findViewById(R.id.etInputText)
         btnAnalyze = findViewById(R.id.btnAnalyzeText)
-        tvHappy = findViewById(R.id.tvHappy)
-        tvSad = findViewById(R.id.tvSad)
-        tvFear = findViewById(R.id.tvFear)
+        tvResultText = findViewById(R.id.tvResultText)
 
         btnAnalyze.setOnClickListener {
-            // TODO: منطق الموديل الحقيقي
-            // مثال: نخلي Happy نشط
-            setSentiment(Sentiment.HAPPY)
+            val text = etInputText.text.toString().trim()
+
+            if (text.isEmpty()) {
+                tvResultText.text = "Please enter some text first."
+                return@setOnClickListener
+            }
+
+            // TODO: هنا هتربط بالموديل الحقيقي / API
+            // مؤقتًا مثال بسيط يبان في البوكس
+            val fakeResult = analyzeLocally(text)
+            tvResultText.text = fakeResult
         }
     }
 
-    private fun setSentiment(sentiment: Sentiment) {
-        setNeutral(tvHappy)
-        setNeutral(tvSad)
-        setNeutral(tvFear)
-
-        when (sentiment) {
-            Sentiment.HAPPY -> setActive(tvHappy)
-            Sentiment.SAD -> setActive(tvSad)
-            Sentiment.FEAR -> setActive(tvFear)
-            else -> {}
+    // مثال مؤقت لعرض نتيجة شكلها منطقي لحد ما تربط بالموديل
+    private fun analyzeLocally(input: String): String {
+        // مجرد مثال غبي: لو فيه "happy" اعتبره سعيد، لو "sad" اعتبره حزين
+        val lower = input.lowercase()
+        return when {
+            "happy" in lower || "love" in lower || "good" in lower ->
+                "Predicted: HAPPY\nConfidence: 0.85\n\nText: \"$input\""
+            "sad" in lower || "bad" in lower || "hate" in lower ->
+                "Predicted: SAD\nConfidence: 0.80\n\nText: \"$input\""
+            else ->
+                "Predicted: NEUTRAL\nConfidence: 0.60\n\nText: \"$input\""
         }
     }
-
-    private fun setNeutral(textView: TextView) {
-        textView.background = ContextCompat.getDrawable(this, R.drawable.bg_result_neutral)
-    }
-
-    private fun setActive(textView: TextView) {
-        textView.background = ContextCompat.getDrawable(this, R.drawable.bg_result_active)
-    }
-}
-
-enum class Sentiment {
-    HAPPY, SAD, FEAR, NONE
 }
